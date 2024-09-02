@@ -12,10 +12,10 @@ export const ProductShowcase = () => {
             <div className="flex justify-center">
               <div className="tag">Boost Your Productivity</div>
             </div>
-            <h2 className="mt-5 text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text ">
+            <h2 className="mt-5 section-title">
               A more Effective way to track products.
             </h2>
-            <p className="text-center text-[22px] leading-[30px] tracking-tight mt-5 text-[#010D3E]">
+            <p className="mt-5 section-description">
               Effortlessly turn your ideas into a fully functional, responsive ,
               SaaS website in just minutes with this template.
             </p>
