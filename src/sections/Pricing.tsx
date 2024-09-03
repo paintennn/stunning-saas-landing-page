@@ -1,5 +1,5 @@
 import CheckIcon from "@/assets/check.svg";
-import twMerge from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 const pricingTiers = [
   {
     title: "Free",
@@ -58,11 +58,11 @@ export const Pricing = () => {
       <section className="py-24">
         <div className="container">
           <h2 className="section-title">Pricing</h2>
-          <p className="section-description mt-5">
-            Free forever,Upgrade for unlimited tasks, better security, and
-            exclusive features .
+          <p className="section-description mt-5 max-w-[540px] mx-auto">
+            Free of cost forever,Upgrade for unlimited tasks, better security,
+            and exclusive features .
           </p>
-          <div>
+          <div className="flex flex-col gap-6 items-center lg:flex-row lg:items-end mt-10">
             {pricingTiers.map(
               ({
                 title,
@@ -72,9 +72,19 @@ export const Pricing = () => {
                 inverse,
                 features,
               }) => (
-                <div className="p-10 border border-[#F1F1F1] rounded-3xl shadow-[0_7px-14px_#EAEAEA]">
+                <div
+                  className={twMerge(
+                    "p-10 border border-[#b8b8b8] rounded-3xl shadow-[0_7px-14px_#b8b8b8] max-w-xs w-full",
+                    inverse === true && "border-black bg-black text-white"
+                  )}
+                >
                   <div className="flex justify-between">
-                    <h3 className="text-lg font-bold text-black/50 ">
+                    <h3
+                      className={twMerge(
+                        "text-lg font-bold text-black/50 ",
+                        inverse === true && "text-white/60"
+                      )}
+                    >
                       {title}
                     </h3>
                     {popular === true && (
@@ -94,7 +104,12 @@ export const Pricing = () => {
                       /monthly
                     </span>
                   </div>
-                  <button className="btn btn-primary w-full mt-[30px]">
+                  <button
+                    className={twMerge(
+                      "btn btn-primary w-full mt-[30px]",
+                      inverse === true && "bg-white text-black"
+                    )}
+                  >
                     {buttonText}
                   </button>
                   <ul className="flex flex-col gap-5 mt-8">
