@@ -7,7 +7,7 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Light Saas Landing Page",
-  description: "Template created by Safdar Ali Shah",
+  description: "Safdar Ali Shah",
 };
 
 export default function RootLayout({
