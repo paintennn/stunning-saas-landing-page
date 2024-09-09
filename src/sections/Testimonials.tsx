@@ -64,7 +64,28 @@ const testimonials = [
     username: "@casey09",
   },
 ];
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
 
 export const Testimonials = () => {
-  return "Testimonials";
+  return (
+    <section className="bg-white">
+      <div className="container">
+        <div className="flex justify-center">
+          <div className="tag">Testimonials</div>
+        </div>
+        <h2 className="section-title mt-5">whats our users say</h2>
+        <p className="section-Description mt-5">
+          From intuitive design to powerfull features, our app has become an ess
+          ential tool for users around the world
+        </p>
+        <div>
+          {firstColumn.map((testimonials) => (
+            <div></div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
