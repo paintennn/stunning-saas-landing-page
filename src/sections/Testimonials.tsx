@@ -81,8 +81,8 @@ export const Testimonials = () => {
           ential tool for users around the world
         </p>
         <div>
-          {firstColumn.map((testimonials) => (
-            <div></div>
+          {firstColumn.map(({ text, name, username, imageSrc }) => (
+            <div className="card"> {text}</div>
           ))}
         </div>
       </div>

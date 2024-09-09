@@ -74,7 +74,7 @@ export const Pricing = () => {
               }) => (
                 <div
                   className={twMerge(
-                    "p-10 border border-[#b8b8b8] rounded-3xl shadow-[0_7px-14px_#b8b8b8] max-w-xs w-full",
+                    "card",
                     inverse === true && "border-black bg-black text-white"
                   )}
                 >
