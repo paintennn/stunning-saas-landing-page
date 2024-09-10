@@ -7,7 +7,7 @@ import avatar6 from "@/assets/avatar-6.png";
 import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
-
+import Image from "next/image";
 const testimonials = [
   {
     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
@@ -82,7 +82,24 @@ export const Testimonials = () => {
         </p>
         <div>
           {firstColumn.map(({ text, name, username, imageSrc }) => (
-            <div className="card"> {text}</div>
+            <div className="card">
+              <div>{text}</div>
+              <div className="flex items-center gap-2 mt-5">
+                <Image
+                  src={imageSrc}
+                  alt={name}
+                  className="h-10 w-10 rounded-full"
+                  width={40}
+                  height={40}
+                />
+                <div className="flex flex-col">
+                  <div className="font-medium tracking-tight leading-3">
+                    {name}
+                  </div>
+                  <div className="leading-5 tracking-tight">{username}</div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
