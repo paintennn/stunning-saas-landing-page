@@ -1,3 +1,3 @@
 export const CallToAction = () => {
-  return null;
+  return <div>Call to Action Started</div>;
 };
