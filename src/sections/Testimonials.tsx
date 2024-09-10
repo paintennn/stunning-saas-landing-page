@@ -8,6 +8,7 @@ import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 const testimonials = [
   {
     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
@@ -67,40 +68,60 @@ const testimonials = [
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
-
+const TestimonialsColumns = (props: {
+  ClassName?: string;
+  testimonial: typeof testimonials;
+}) => (
+  <div
+    className={twMerge(
+      "flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]",
+      props.ClassName
+    )}
+  >
+    {props.testimonial.map(({ text, name, username, imageSrc }) => (
+      <div className="card">
+        <div>{text}</div>
+        <div className="flex items-center gap-2 mt-5">
+          <Image
+            src={imageSrc}
+            alt={name}
+            className="h-10 w-10 rounded-full"
+            width={40}
+            height={40}
+          />
+          <div className="flex flex-col">
+            <div className="font-medium tracking-tight leading-3">{name}</div>
+            <div className="leading-5 tracking-tight">{username}</div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+);
 export const Testimonials = () => {
   return (
     <section className="bg-white">
       <div className="container">
-        <div className="flex justify-center">
-          <div className="tag">Testimonials</div>
+        <div className="section-description">
+          <div className="flex justify-center">
+            <div className="tag">Testimonials</div>
+          </div>
+          <h2 className="section-title mt-5">whats our users say</h2>
+          <p className="section-Description mt-5">
+            From intuitive design to powerfull features, our app has become an
+            ess ential tool for users around the world
+          </p>
         </div>
-        <h2 className="section-title mt-5">whats our users say</h2>
-        <p className="section-Description mt-5">
-          From intuitive design to powerfull features, our app has become an ess
-          ential tool for users around the world
-        </p>
-        <div>
-          {firstColumn.map(({ text, name, username, imageSrc }) => (
-            <div className="card">
-              <div>{text}</div>
-              <div className="flex items-center gap-2 mt-5">
-                <Image
-                  src={imageSrc}
-                  alt={name}
-                  className="h-10 w-10 rounded-full"
-                  width={40}
-                  height={40}
-                />
-                <div className="flex flex-col">
-                  <div className="font-medium tracking-tight leading-3">
-                    {name}
-                  </div>
-                  <div className="leading-5 tracking-tight">{username}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="flex justify-center gap-6">
+          <TestimonialsColumns testimonial={firstColumn} />
+          <TestimonialsColumns
+            testimonial={secondColumn}
+            ClassName="hidden md:flex"
+          />
+          <TestimonialsColumns
+            testimonial={thirdColumn}
+            ClassName="hidden lg:flex"
+          />
         </div>
       </div>
     </section>
