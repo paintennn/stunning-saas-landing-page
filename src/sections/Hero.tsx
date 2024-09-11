@@ -30,7 +30,7 @@ export const Hero = () => {
             </div>
           </div>
           <div className="mt-20 md:h-[648px] md:mt-0 md:flex-1 relative">
-            <motion.
+            <motion.img
               className="hidden md:block -top-8  -left-32 md:absolute"
               src={CylinderIamge.src}
               alt="Cylinder Image over the Cog Image in hero Section of the landing page"
