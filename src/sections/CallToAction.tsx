@@ -4,7 +4,7 @@ import SpringImage from "@/assets/spring.png";
 import Image from "next/image";
 export const CallToAction = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-[#D2DCFF]">
+    <section className="py-24 bg-gradient-to-b from-white to-[#D2DCFF] overflow-x-clip">
       <div className="container">
         <div className="relative">
           <h2 className="section-title">Sign up for Free Today!</h2>
@@ -16,13 +16,13 @@ export const CallToAction = () => {
             src={StarImage}
             alt="Star Image"
             width={360}
-            className="absolute lg:-left-[350px]"
+            className="absolute -top-[137px] -left-[350px]"
           />
           <Image
             src={SpringImage}
             alt="Star Image"
             width={360}
-            className="hidden absolute "
+            className="-top-[19x] -right-[337px] absolute "
           />
         </div>
         <div className="flex justify-center gap-6 mt-10">
