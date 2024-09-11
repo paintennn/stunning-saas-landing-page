@@ -3,7 +3,7 @@ import CogImage from "@/assets/cog.png";
 import Image from "next/image";
 import CylinderIamge from "@/assets/cylinder.png";
 import NoddleImage from "@/assets/noodle.png";
-
+import motion from "framer-motion";
 export const Hero = () => {
   return (
     <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip">
