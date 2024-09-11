@@ -16,13 +16,13 @@ export const CallToAction = () => {
             src={StarImage}
             alt="Star Image"
             width={360}
-            className="absolute -top-[137px] -left-[350px]"
+            className="hidden md:block absolute -top-[137px] -left-[350px]"
           />
           <Image
             src={SpringImage}
             alt="Star Image"
             width={360}
-            className="-top-[19x] -right-[337px] absolute "
+            className="hidden md:block -top-[19x] -right-[337px] absolute "
           />
         </div>
         <div className="flex justify-center gap-6 mt-10">
