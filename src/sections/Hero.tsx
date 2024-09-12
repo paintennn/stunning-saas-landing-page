@@ -1,13 +1,23 @@
-"use Client";
+"use client";
 import ArrowIcon from "@/assets/arrow-right.svg";
 import CogImage from "@/assets/cog.png";
 import Image from "next/image";
 import CylinderIamge from "@/assets/cylinder.png";
 import NoddleImage from "@/assets/noodle.png";
-import * as motion from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 export const Hero = () => {
+  const HeroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: HeroRef,
+    offset: ["start end", "end start"],
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
   return (
-    <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip">
+    <section
+      ref={HeroRef}
+      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip"
+    >
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
@@ -31,23 +41,36 @@ export const Hero = () => {
           </div>
           <div className="mt-20 md:h-[648px] md:mt-0 md:flex-1 relative">
             <motion.img
+              src={CogImage.src}
+              alt="Cog Image"
+              className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
+              animate={{ translateY: [-20, 20] }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 3,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.img
               className="hidden md:block -top-8  -left-32 md:absolute"
               src={CylinderIamge.src}
               alt="Cylinder Image over the Cog Image in hero Section of the landing page"
               height={220}
               width={220}
+              style={{ translateY: translateY }}
             />
-            <Image
-              src={CogImage}
-              alt="Cog Image"
-              className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
-            />
-            <Image
-              src={NoddleImage}
+
+            <motion.img
+              src={NoddleImage.src}
               height={220}
               width={220}
               alt="noddle image in hero section of landing page"
               className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
+              style={{
+                rotate: 30,
+                translateY: translateY,
+              }}
             />
           </div>
         </div>
