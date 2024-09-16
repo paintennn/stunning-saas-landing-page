@@ -2,7 +2,6 @@
 import ArrowRight from "@/assets/arrow-right.svg";
 import StarImage from "@/assets/star.png";
 import SpringImage from "@/assets/spring.png";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
