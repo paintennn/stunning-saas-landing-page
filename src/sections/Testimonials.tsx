@@ -9,12 +9,8 @@ import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
 import { motion } from "framer-motion";
-import { useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
 import React from "react";
-import { div } from "framer-motion/client";
 const testimonials = [
   {
     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
