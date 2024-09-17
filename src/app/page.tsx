@@ -1,4 +1,5 @@
 import { CallToAction } from "@/sections/CallToAction";
+import { DeveloperInfo } from "@/sections/DeveloperInfo";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
 import { Hero } from "@/sections/Hero";
@@ -9,6 +10,7 @@ import { Testimonials } from "@/sections/Testimonials";
 export default function Home() {
   return (
     <>
+      <DeveloperInfo />
       <Header />
       <Hero />
       <LogoTicker />
@@ -17,6 +19,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer />
+      <DeveloperInfo />
     </>
   );
 }

@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <header className="sticky top-0 backdrop-blur-sm z-20 ">
-      <div className="flex justify-center gap-3 items-center py-3 bg-black text-white">
+      <div className="flex justify-center gap-2 items-center py-3 bg-black text-white">
         <p className="text-white/60 hidden md:block">
           Streamline/ Automize your workflow and boost your productivity
         </p>
