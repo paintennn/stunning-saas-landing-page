@@ -10,7 +10,7 @@ import { Testimonials } from "@/sections/Testimonials";
 export default function Home() {
   return (
     <>
-      <DeveloperInfo />
+      {/* <DeveloperInfo /> */}
       <Header />
       <Hero />
       <LogoTicker />
